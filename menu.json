@@ -1,0 +1,46 @@
+{
+  "menuItems": [
+    {
+      "id": "1",
+      "name": "Street Tacos",
+      "price": 3.99,
+      "description": "Authentic Mexican street tacos with your choice of meat",
+      "image": "http://static.photos/food/640x360/1"
+    },
+    {
+      "id": "2",
+      "name": "Gourmet Hot Dog",
+      "price": 4.50,
+      "description": "Premium beef hot dog with all the fixings",
+      "image": "http://static.photos/food/640x360/2"
+    },
+    {
+      "id": "3",
+      "name": "Classic Burger",
+      "price": 5.99,
+      "description": "Juicy beef patty with cheese, lettuce, and special sauce",
+      "image": "http://static.photos/food/640x360/3"
+    },
+    {
+      "id": "4",
+      "name": "Loaded Fries",
+      "price": 3.50,
+      "description": "Crispy fries topped with cheese, bacon, and green onions",
+      "image": "http://static.photos/food/640x360/4"
+    },
+    {
+      "id": "5",
+      "name": "Churros",
+      "price": 2.99,
+      "description": "Golden fried dough sticks dusted with cinnamon sugar",
+      "image": "http://static.photos/food/640x360/5"
+    }
+  ],
+  "cart": [],
+  "order": {
+    "items": [],
+    "subtotal": 0,
+    "deliveryFee": 2.50,
+    "total": 2.50
+  }
+}
