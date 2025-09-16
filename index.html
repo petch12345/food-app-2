@@ -177,7 +177,7 @@
         feather.replace();
         
         // Cart functionality
-        let cart = [];
+        let cart = JSON.parse(localStorage.getItem('cart')) || [];
         const cartBtn = document.getElementById('cart-btn');
         const cartModal = document.getElementById('cart-modal');
         const closeCart = document.getElementById('close-cart');
@@ -187,6 +187,14 @@
         const cartTotal = document.getElementById('cart-total');
         const checkoutBtn = document.getElementById('checkout-btn');
         const addToCartButtons = document.querySelectorAll('.add-to-cart');
+
+        // Function to save cart to localStorage
+        function saveCart() {
+            localStorage.setItem('cart', JSON.stringify(cart));
+        }
+
+        // Initialize cart UI with loaded data
+        updateCart();
 
         // Toggle cart modal
         cartBtn.addEventListener('click', () => {
@@ -219,8 +227,9 @@
                 }
                 
                 updateCart();
+                saveCart();
                 cartModal.classList.remove('hidden');
-                
+
                 // Animation feedback
                 button.textContent = 'Added!';
                 button.classList.add('bg-green-500');
@@ -265,6 +274,7 @@
                         const item = cart.find(item => item.id === id);
                         item.quantity += 1;
                         updateCart();
+                        saveCart();
                     });
                 });
                 
@@ -278,6 +288,7 @@
                             cart = cart.filter(item => item.id !== id);
                         }
                         updateCart();
+                        saveCart();
                     });
                 });
                 
@@ -286,6 +297,7 @@
                         const id = button.dataset.id;
                         cart = cart.filter(item => item.id !== id);
                         updateCart();
+                        saveCart();
                     });
                 });
             }
@@ -302,10 +314,11 @@
                 alert('Your cart is empty!');
                 return;
             }
-            
+
             alert('Order placed successfully! Thank you for your purchase.');
             cart = [];
             updateCart();
+            saveCart();
             cartModal.classList.add('hidden');
         });
 
