@@ -1,4 +1,5 @@
 const express = require('express');
+const path = require('path');
 const app = express();
 const port = 3000;
 
@@ -7,7 +8,12 @@ app.use(express.static('../'));
 
 // Route to serve the index.html file
 app.get('/', (req, res) => {
-  res.sendFile(__dirname + '/../index.html');
+  res.sendFile(path.join(__dirname, '..', 'index.html'));
+});
+
+// Route to serve the admin.html file
+app.get('/admin', (req, res) => {
+  res.sendFile(path.join(__dirname, '..', 'admin.html'));
 });
 
 // Start the server
