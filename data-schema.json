@@ -12,11 +12,22 @@
       }
     },
     "cart": {
-      "type": "array",
-      "description": "Array of items in the shopping cart",
-      "items": {
-        "$ref": "#/definitions/cartItem"
-      }
+      "type": "object",
+      "description": "Shopping cart with order ID and items",
+      "properties": {
+        "orderId": {
+          "type": "string",
+          "description": "Unique order identifier using timestamp"
+        },
+        "items": {
+          "type": "array",
+          "description": "Array of items in the shopping cart",
+          "items": {
+            "$ref": "#/definitions/cartItem"
+          }
+        }
+      },
+      "required": ["orderId", "items"]
     },
     "order": {
       "$ref": "#/definitions/order"
