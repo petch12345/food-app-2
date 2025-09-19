@@ -36,7 +36,10 @@
       "image": "http://static.photos/food/640x360/5"
     }
   ],
-  "cart": [],
+  "cart": {
+    "orderId": "1726490687000",
+    "items": []
+  },
   "order": {
     "items": [],
     "subtotal": 0,
